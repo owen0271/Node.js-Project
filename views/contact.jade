@@ -1,0 +1,63 @@
+//
+   Created by owen0271 on 2016/12/7.
+extends layout
+block link
+    link(rel="stylesheet", href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css")
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+    link(rel="stylesheet", href="/stylesheets/jquery.bxslider.css")
+    link(rel='stylesheet', type='text/css', href='/stylesheets/resume.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/resume/contact.css')
+
+block script
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
+    script(src="https://code.jquery.com/jquery-3.1.1.js")
+    script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.js")
+    script(type='text/javascript', src="/javascripts/jquery.bxslider.js")
+    script(type='text/javascript', src='/javascripts/resume/contact.js')
+
+block content
+    nav.navbar.navbar-fixed-top.navbar-inverse#nav_bar
+        div.container
+            div.navbar-header
+                a(href='/resume').navbar-brand MY RESUME
+            for items in pageData.nav_list
+                ul.nav.navbar-nav
+                    li
+                        a(href=items.page)=items.nv_title
+block main_body
+    div.container#contact_main_body
+        div.col-sm-4
+        div.col-sm-8#contact_card
+            button.btn#contact_title Contact Me
+            br
+            div#contact_info
+                for items in pageData.contact
+                    div= items
+
+    div.container#contact_form
+        div.col-sm-4
+        div.col-sm-8#form_section
+            form(method='post', action='../resume/contact')#form_content
+                div.form-group
+                    lable Name:
+                    br
+                    input(type='text',name='your_name',placeholder='Enter Your Name').form-control
+                    lable Email:
+                    br
+                    input(type='text',name='your_email',placeholder='Enter Your Email Address').form-control
+                    label(for='select_reason') Please select your reason
+                    select.form-control#select_reason
+                        option Just email to say 'Hi'
+                        option Have a possible job opportunity for you
+                        option Let's keep in touch for future opportunities
+                    label Write your e-mail:
+                    br
+                    textarea(name='email_content',placeholder='Enter Your Email Content').form-control#email_text
+                    button(type='submit').btn.btn-default#submit_btn Submit
+
+    if form_submission_status
+        div#dialog-message(title="Congratulations")
+            //span.ui-icon.ui-icon-circle-check(style="float:left; margin:0 7px 50px 0;")
+            div You have successfully sent your email to me!
+            div I will get back to you as soon as possible!
+            div Cheers!

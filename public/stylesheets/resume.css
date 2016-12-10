@@ -1,0 +1,106 @@
+body {
+    background: url('../images/resume/resume_background.jpg') no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#nav_bar {
+    border: 1px solid yellow;
+    z-index: 99999;
+}
+
+#slides {
+    position: relative;
+    top: 10px;
+    right: 10px;
+    height: 200px;
+    /*border: 1px solid red;*/
+}
+
+#slider {
+    /*border: 1px solid yellow;*/
+}
+
+.resume_button {
+    margin: 10px;
+}
+
+.collapse_section {
+
+}
+
+#slide_content {
+    position: relative;
+    top: 50px;
+    margin: 20px;
+}
+
+#main_content {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+button h4 {
+    font-family: "Book Antiqua";
+}
+
+#summery {
+    /*border:1px solid red;*/
+    font-family: "Century Gothic";
+    font-size: 120%;
+    padding: 10px;
+    line-height: 150%;
+}
+
+#education {
+    /*border:1px solid blue;*/
+    font-family: "Century Gothic";
+    font-size: 120%;
+    padding: 10px;
+    line-height: 150%;
+}
+
+#education_content {
+    padding: 10px;
+}
+
+#working {
+    /*border:1px solid blue;*/
+    font-family: "Century Gothic";
+    font-size: 120%;
+    padding: 10px;
+    line-height: 150%;
+}
+
+#working_content {
+    padding: 10px;
+}
+
+#project {
+    /*border:1px solid blue;*/
+    font-family: "Century Gothic";
+    font-size: 120%;
+    padding: 10px;
+    line-height: 150%;
+}
+
+#project_content {
+    padding: 10px;
+}
+
+#publication {
+    /*border:1px solid blue;*/
+    font-family: "Century Gothic";
+    font-size: 120%;
+    padding: 10px;
+    line-height: 150%;
+}
+
+#publication_content {
+    padding: 10px;
+}
+
+/*
+* {
+    border: 1px solid;
+}
+*/

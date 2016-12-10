@@ -1,0 +1,78 @@
+body {
+    background: url('../../images/resume/resume_background.JPG') no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#contact_main_body {
+    position: relative;
+    top: 60px;
+    /*border: 1px solid blueviolet;*/
+}
+
+#contact_title {
+    padding: 10px;
+    margin: 10px;
+    background: rgba(126, 255, 255, 0.6);
+    font-size: 2.5rem;
+    border-radius: 20px;
+}
+
+#contact_card {
+    background: rgba(255, 255, 255, 0.4);
+    /*border: 1px solid black;*/
+    border-radius: 20px;
+    padding: 20px;
+    font-family: "Century Gothic";
+    font-size: 2rem;
+}
+
+#contact_info {
+    /*border: 1px solid orangered;*/
+    margin:10px;
+    padding: 10px;
+    background: rgba(126, 255, 255, 0.4);
+    font-size: 2rem;
+    border-radius: 20px;
+}
+
+#form_section {
+    background: rgba(255, 255, 255, 0.4);
+    /*border: 1px solid black;*/
+    border-radius: 20px;
+    padding: 20px;
+    font-family: "Century Gothic";
+    font-size: 2rem;
+}
+
+#contact_form {
+    position: relative;
+    top: 60px;
+     /*border: 1px solid blueviolet;*/
+}
+
+#form_content {
+    margin:10px;
+    padding: 10px;
+    background: rgba(126, 255, 255, 0.4);
+    font-size: 2rem;
+    border-radius: 20px;
+}
+
+input {
+    margin: 0px 10px 0px 0px;
+}
+
+#email_text {
+    /*resize: vertical;*/
+    overflow: hidden;
+
+}
+
+#submit_btn {
+    position: relative;
+    top: 10px;
+}
+.ui-draggable, .ui-droppable {
+    background-position: top;
+}

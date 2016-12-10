@@ -1,0 +1,44 @@
+extends layout
+
+block link
+    link(rel='stylesheet' type='text/css' href='stylesheets/main.css')
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+    link(rel="stylesheet" href="stylesheets/jquery.bxslider.css")
+
+block script
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js')
+    script(type='text/javascript' src="javascripts/jquery.bxslider.js")
+    script(type='text/javascript' src='javascripts/script.js')
+
+block content
+    div#site_icon.container
+        header.col-sm-4
+            div#site_name TV SHOW
+        nav#main_nav
+            a(href="#") Chinese Shows
+            a(href="#") Korean Shows
+            a(href="#") U.S. Shows
+            a(href="#") Contact
+
+    - var shows= [{name:'DrQinMing', source:'images/DrQinMing.jpg'},{name:'HuanCheng', source:'images/HuanCheng.jpg'},{name:'MaQue', source:'images/MaQue.jpg'}]
+    div#image_wrapper.container
+        h3 Featured Today
+        div.image_slider
+            for items,i in shows
+                div.slide
+                    img(src=items.source)
+
+    div#main_section.container
+        for items in [{catogory:'Chinese TV Show',}, {catogory:'Korean TV Show'}, {catogory:'US TV Show'}, {catogory:'Contact'}]
+            div.row
+                h3#title_level2= items.catogory
+                div#chn_tv_show.container
+                div#recommand_show_1.col-sm-2
+                    iframe(width="560" height="315" src="https://www.youtube.com/embed/JhsMEKI7C6o" frameborder="0" allowfullscreen) 军师联盟
+                    a(href="https://www.youtube.com/embed/JhsMEKI7C6o") 军师联盟
+                div#recommand_show_2_wrapper.col-sm-8
+
+        div.container
+            footer
+                p @copy; Company 2016
+

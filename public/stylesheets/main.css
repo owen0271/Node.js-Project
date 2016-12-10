@@ -1,0 +1,59 @@
+body {
+    height: 100%;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    background-image: url('../images/background_white.jpg');
+    background-attachment: fixed;
+}
+
+header {
+    display: inline;
+}
+
+div#site_name {
+    color: aqua;
+    font-family: "Comic Sans MS";
+}
+
+nav {
+    font-size: 2rem;
+    vertical-align: text-bottom;
+}
+
+#main_nav {
+}
+
+nav a {
+    padding: 2rem;
+    color: hotpink;
+}
+
+div#site_icon {
+    padding: 0;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 3rem;;
+    background-size: contain;
+    background-color: #FFFFFF;;
+    z-index: 100;
+}
+
+#main_section {
+    padding: 10px;
+    height: 100%;
+    background: url('../images/background_image.jpg') no-repeat fixed center;
+    background-size: contain;
+}
+
+#title_level2 {
+    color: #a3aa00;
+}
+
+.image_slider {
+    padding: 0;
+}
+
+* {
+    border: 1px groove rgba(255, 100, 0, 0.3);
+    border-style: groove;
+}

@@ -1,0 +1,95 @@
+//
+   Created by owen0271 on 2016/12/5.
+extends layout
+
+block link
+    link(rel='stylesheet' type='text/css' href='stylesheets/resume.css')
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+    link(rel="stylesheet" href="stylesheets/jquery.bxslider.css")
+
+block script
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js')
+    script(type='text/javascript' src="javascripts/jquery.bxslider.js")
+    script(type='text/javascript' src='javascripts/resume.js')
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
+
+block content
+    nav.navbar.navbar-fixed-top.navbar-inverse#nav_bar
+        div.container
+            div.navbar-header
+                a(href='/resume').navbar-brand MY RESUME
+            for items in pageData.nav_list
+                ul.nav.navbar-nav
+                    li
+                        a(href=items.page)=items.nv_title
+
+block main_body
+    div.container
+        div.row#slide_content
+            div.col-sm-5#slides
+                - var shows= [{name:'withFriends', source:'images/resume/IMG_4757.jpg'},{name:'chelsea_fan', source:'images/resume/chelsea-images.jpg'},{name:'winter_is_coming', source:'images/resume/winter_is_coming.jpg'}]
+                div.image_slider#slider
+                    for items in shows
+                        div.slide
+                            img(src=items.source)
+
+            div.col-sm-7#main_content
+                div#summery
+                    div.resume_button
+                        button.btn.btn-info.btn-block.active: h4 SUMMERY
+                    div
+                        ul
+                            for items in pageData.summery_list
+                                li= items
+
+                div#education
+                    div.resume_button
+                        button.btn.btn-info.btn-block.active: h4 EDUCATION BACKGROUND
+                    div#education_content.collapse_section
+                        for items in pageData.education
+                            div
+                                h3= items.edu_period
+                            div= items.status + ' -- GPA ' + items.GPA
+                            div= items.institute
+                            div= items.research_area
+
+                div#working
+                    div.resume_button
+                        button.btn.btn-info.btn-block.active: h4 WORKING EXPERIENCE
+                    div#working_content.collapse_section
+                        for items in pageData.working
+                            div
+                                h3= items.job_title
+                            div= items.company
+                            div= items.working_period
+                            div= items.location
+                            div
+                                h4 Responsibilities:
+                                ul
+                                    for sub_item in items.responsibilities
+                                        li=sub_item
+
+                div#project
+                    div.resume_button
+                        button.btn.btn-info.btn-block.active: h4 PROJECTS
+                    div#project_content.collapse_section
+                        for items in pageData.project
+                            div
+                                h3= items.project_name + ' ' + items.status
+                            if items.institution != ''
+                                div= items.institution
+                            div= items.starting_date
+                            div Responsibility:
+                                ul
+                                    for i in items.responsibility
+                                        li=i
+
+                div#publication
+                    div.resume_button
+                        button.btn.btn-info.btn-block.active: h4 PUBLICATION
+                    div#publication_content.collapse_section
+                        for items in pageData.publication
+                            div= items.edu_period
+                            div= items.status
+                            div= items.institute
+
